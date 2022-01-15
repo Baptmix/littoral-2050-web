@@ -13,7 +13,7 @@ class ListController extends Controller
      */
     public function index() {
         $client = new Client();
-        $response = $client->request('GET', env("APP_API_URL") . "/electors/cities/", [
+        $response = $client->request('GET', env("APP_API_URL") . "/electors/cities/all", [
             'headers' => [
                 'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
                 'Accept' => 'application/json',

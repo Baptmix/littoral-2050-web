@@ -11,6 +11,7 @@
                 Liste des électeurs du Bureau {{ $code }} de {{ $city }}
             </h1>
         </div>
+        {{ \Diglactic\Breadcrumbs\Breadcrumbs::render() }}
     </header>
     <main>
         <div class="container mx-auto">
@@ -116,5 +117,11 @@
 
             });
         </script>
+
+        <style>
+            table#dataTable {
+                padding: 0!important;
+            }
+        </style>
     </main>
 @stop

@@ -54,6 +54,14 @@
                 mapboxgl: mapboxgl
             });
 
+            map.addControl(new mapboxgl.GeolocateControl({
+                positionOptions: {
+                    enableHighAccuracy: true
+                },
+                trackUserLocation: true,
+                showUserHeading: true
+            }), 'top-left');
+
             map.addControl(geocoder);
         </script>
 

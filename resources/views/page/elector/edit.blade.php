@@ -9,6 +9,7 @@
                 Édition électeur
             </h1>
         </div>
+        {{ \Diglactic\Breadcrumbs\Breadcrumbs::render() }}
     </header>
     <main>
         <div class="container mx-auto">
@@ -16,7 +17,7 @@
                 <div class="w-full">
                     <div class="mt-10 shadow rounded-md sm:overflow-hidden">
                         <div>
-                            <form action="#" method="POST" class="mb-0">
+                            <form action="{{ route('update_elector') }}" method="POST" class="mb-0">
                                 <div class="">
                                     <div class="px-4 py-5 bg-white">
                                         <div class="grid grid-cols-9 gap-9">
@@ -46,12 +47,21 @@
                                                        class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
                                             </div>
 
-                                            <div class="col-span-9">
+                                            <div class="col-span-3">
+                                                <label for="birth_date"
+                                                       class="required block text-sm font-medium text-gray-700">Date de naissance
+                                                </label>
+                                                <input type="text" name="birth_date" id="birth_date"
+                                                       autocomplete="birth_date" value="{{$elector->birth_date}}" required
+                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
+                                            </div>
+
+                                            <div class="col-span-6">
                                                 <label for="email_address"
                                                        class="block text-sm font-medium text-gray-700">Adresse
                                                     e-mail
                                                 </label>
-                                                <input type="text" name="email" id="email"
+                                                <input type="email" name="email" id="email"
                                                        autocomplete="email" value="{{$elector->email}}"
                                                        class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
                                             </div>
@@ -84,7 +94,7 @@
                                                        class="block text-sm font-medium text-gray-700">Numéro de
                                                     téléphone</label>
                                                 <input type="tel" name="phone" id="phone"
-                                                       autocomplete="street-address" value="{{$elector->phone}}"
+                                                       autocomplete="street-address" placeholder="0123456789" pattern="[0-9]{10}" value="{{$elector->phone}}"
                                                        class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
                                             </div>
 
@@ -167,9 +177,9 @@
                                                 <select id="voting_office_district" name="voting_office_district"
                                                         autocomplete="voting_office_district" required
                                                         class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                                    <option>Ville 1</option>
-                                                    <option>Ville 2</option>
-                                                    <option>Ville 3</option>
+                                                    @foreach($districts as $district)
+                                                        <option value="{{$district->voting_office_district}}" @if($elector->voting_office_district == $district->voting_office_district) selected @endif>{{$district->voting_office_district}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
 
@@ -192,7 +202,10 @@
                                        autocomplete="country" value="FRANCE">
                                 <input type="hidden" name="nationality_identifier" id="nationality_identifier"
                                        autocomplete="nationality_identifier" value="FR">
+                                <input type="hidden" name="id" id="id"
+                                       autocomplete="id" value="{{$elector->id}}">
                                 <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                                    @csrf
                                     <button type="submit"
                                             class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                         Sauvegarder

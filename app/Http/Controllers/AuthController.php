@@ -30,4 +30,8 @@ class AuthController extends Controller
             dd(($response)->getBody()->getContents());
         }
     }
+
+    public function forgottenPassword(Request $request) {
+        return View('auth.forgotten_password');
+    }
 }

@@ -11,6 +11,7 @@
                 Liste des bureaux pour {{$city}}
             </h1>
         </div>
+        {{ \Diglactic\Breadcrumbs\Breadcrumbs::render() }}
     </header>
     <main>
         <div class="content flex flex-wrap flex-row mb-2 justify-center">
