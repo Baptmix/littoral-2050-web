@@ -9,15 +9,11 @@ class ElectorController extends Controller
 {
     public function edit(int $id) {
         $client = new Client();
-        $response = $client->request('POST', env("APP_API_URL") . "/elector/find", [
+        $response = $client->request('GET', env("APP_API_URL") . "/elector/" . $id, [
             'headers' => [
                 'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
-
-            'form_params' => [
-                "id" => $id
-            ]
         ]);
 
         $citiesRequest = $client->request('GET', env("APP_API_URL") . "/electors/cities/all", [
