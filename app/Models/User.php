@@ -12,6 +12,34 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable, HasApiTokens;
 
+
+    use AuthTrait;
+    /**
+     * @var mixed
+     */
+    private $username;
+    /**
+     * @var mixed
+     */
+    public $password = 'password';
+    /**
+     * @var string
+     */
+    protected $rememberTokenName = 'remember_token';
+    /**
+     * @var mixed
+     */
+    public $email = 'bjourquin@littoral.fr';
+    /**
+     * @var mixed
+     */
+    protected $authenticated = false;
+    /**
+     * @var mixed
+     */
+    protected $role = null;
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -41,4 +69,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function fetchUserByCredentials(array $credentials)
+    {
+        if ($this->email === $credentials['email']) {
+            $arr_user = $this->email;
+            return $this;
+        }
+
+        return null;
+    }
 }

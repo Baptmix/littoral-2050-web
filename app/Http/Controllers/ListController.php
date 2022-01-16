@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ElectorsExport;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ListController extends Controller
 {
@@ -21,7 +23,7 @@ class ListController extends Controller
         ]);
         if($response->getStatusCode() == 200) {
             $cities = json_decode($response->getBody()->getContents());
-            return View('page.list', ["cities" => $cities->cities]);
+            return View('list.list', ["cities" => $cities->cities]);
         }
     }
 
@@ -38,7 +40,7 @@ class ListController extends Controller
         ]);
         if($response->getStatusCode() == 200) {
             $codes = json_decode($response->getBody()->getContents());
-            return View('page.list_offices', ["city" => $request->city, "codes" => $codes->codes]);
+            return View('list.list_offices', ["city" => $request->city, "codes" => $codes->codes]);
         }
     }
 
@@ -59,7 +61,16 @@ class ListController extends Controller
         ]);
         if($response->getStatusCode() == 200) {
             $electors = json_decode($response->getBody()->getContents());
-            return View('page.list_electors', ["city" => $request->city, "code" => $request->code, "electors" => $electors->electors]);
+            return View('list.list_electors', ["city" => $request->city, "code" => $request->code, "electors" => $electors->electors]);
         }
+    }
+
+
+
+
+    function exportCSV(Request $request)
+    {
+        return Excel::download(new ElectorsExport($request->city, $request->code), 'electeurs_' . $request->city .'_' . $request->code . '.xlsx');
+
     }
 }

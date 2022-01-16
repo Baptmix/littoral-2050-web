@@ -9,6 +9,6 @@ class MapController extends Controller
     //
 
     public function index() {
-        return View('page.map');
+        return View('map');
     }
 }

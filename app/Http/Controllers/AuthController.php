@@ -15,7 +15,7 @@ class AuthController extends Controller
         return View('auth.login');
     }
 
-    public function login(Request $request) {
+    public function login(Request $request, Guard $guard) {
         $client = new Client();
         $response = $client->request('POST',env('APP_API_URL') . "/auth/login/", [
             'json' => [
@@ -27,6 +27,10 @@ class AuthController extends Controller
             ]
         ]);
         if($response->getStatusCode() == 200) {
+            $guard->validate();
+            $user = $guard->user();
+
+            dd($user);
             dd(($response)->getBody()->getContents());
         }
     }

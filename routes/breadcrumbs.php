@@ -28,3 +28,20 @@ Breadcrumbs::for('edit_elector', function (BreadcrumbTrail $trail, int $id): voi
 
     $trail->push("Édition #" . $id, route('edit_elector', $id));
 });
+
+
+Breadcrumbs::for('users', function (BreadcrumbTrail $trail): void {
+    $trail->push("Liste des utilisateurs", route('users'));
+});
+
+Breadcrumbs::for('edit_user', function (BreadcrumbTrail $trail, int $id): void {
+    $trail->parent('users');
+
+    $trail->push("Édition #" . $id, route('edit_user', $id));
+});
+
+Breadcrumbs::for('add_user', function (BreadcrumbTrail $trail): void {
+    $trail->parent('users');
+
+    $trail->push("Ajout d'un utilisateur", route('add_user'));
+});

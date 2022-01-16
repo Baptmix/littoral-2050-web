@@ -25,7 +25,7 @@ class DashboardController extends Controller
         if($countElectorsResponse->getStatusCode() == 200 && $countUsersResponse->getStatusCode() == 200) {
             $countElectors = json_decode($countElectorsResponse->getBody()->getContents());
             $countUsers = json_decode($countUsersResponse->getBody()->getContents());
-            return View('page.dashboard', ["count_electors" => $countElectors->electors, "count_users" => $countUsers->users]);
+            return View('dashboard', ["count_electors" => $countElectors->electors, "count_users" => $countUsers->users]);
         }
     }
 }

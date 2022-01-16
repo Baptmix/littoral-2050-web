@@ -33,7 +33,8 @@
     </header>
     <main>
         <div class="content flex flex-wrap flex-row mb-2 justify-center">
-            <div id="map"></div>
+{{--            <div id="map"></div>--}}
+            <iframe frameborder="0" width="1024" height="1080" src="https://data.dunkerque-agglo.fr/map/embed/carte/?&static=false&scrollWheelZoom=false%22%3E"</iframe>
         </div>
         <script>
             mapboxgl.accessToken = 'pk.eyJ1IjoiYmFwdG1peCIsImEiOiJja3k5d3d5MzUwYXRnMm9sNzF6eDE2cWRnIn0.nOG1aFsL61FWs14DuHEWSA';

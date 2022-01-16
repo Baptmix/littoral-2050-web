@@ -27,7 +27,7 @@
                                                     naissance</label>
                                                 <input type="text" name="birth_name" id="birth_name"
                                                        autocomplete="birth_name" value="{{$elector->birth_name}}"
-                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
+                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10">
                                             </div>
 
                                             <div class="col-span-3">
@@ -36,7 +36,7 @@
                                                     d'usage</label>
                                                 <input type="text" name="common_name" id="common_name"
                                                        autocomplete="common_name" value="{{$elector->common_name}}"
-                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
+                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10">
                                             </div>
 
                                             <div class="col-span-3">
@@ -44,16 +44,18 @@
                                                        class="block text-sm font-medium text-gray-700">Prénom(s)</label>
                                                 <input type="text" name="first_name" id="first_name"
                                                        autocomplete="first_name" value="{{$elector->first_name}}"
-                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
+                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10">
                                             </div>
 
                                             <div class="col-span-3">
                                                 <label for="birth_date"
-                                                       class="required block text-sm font-medium text-gray-700">Date de naissance
+                                                       class="required block text-sm font-medium text-gray-700">Date de
+                                                    naissance
                                                 </label>
                                                 <input type="text" name="birth_date" id="birth_date"
-                                                       autocomplete="birth_date" value="{{$elector->birth_date}}" required
-                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
+                                                       autocomplete="birth_date" value="{{$elector->birth_date}}"
+                                                       required
+                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10">
                                             </div>
 
                                             <div class="col-span-6">
@@ -63,14 +65,14 @@
                                                 </label>
                                                 <input type="email" name="email" id="email"
                                                        autocomplete="email" value="{{$elector->email}}"
-                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
+                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10">
                                             </div>
 
                                             <div class="col-span-3">
                                                 <label for="gender"
                                                        class="required block text-sm font-medium text-gray-700">Sexe</label>
                                                 <select id="gender" name="gender" autocomplete="gender" required
-                                                        class=" mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                                        class=" mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
                                                     @if($elector->gender == "M")
                                                         <option value="M" selected>Masculin</option>
                                                     @else
@@ -94,24 +96,27 @@
                                                        class="block text-sm font-medium text-gray-700">Numéro de
                                                     téléphone</label>
                                                 <input type="tel" name="phone" id="phone"
-                                                       autocomplete="street-address" placeholder="0123456789" pattern="[0-9]{10}" value="{{$elector->phone}}"
-                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
+                                                       autocomplete="street-address" placeholder="0123456789"
+                                                       pattern="[0-9]{10}" value="{{$elector->phone}}"
+                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10">
                                             </div>
 
                                             <div class="col-span-3">
                                                 <label for="street_number"
                                                        class="required block text-sm font-medium text-gray-700">Numéro
                                                     de rue</label>
-                                                <input type="text" name="street_number" id="street_number" required value="{{$elector->street_number}}"
-                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
+                                                <input type="text" name="street_number" id="street_number" required
+                                                       value="{{$elector->street_number}}"
+                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10">
                                             </div>
 
                                             <div class="col-span-6">
                                                 <label for="street_name"
                                                        class="required block text-sm font-medium text-gray-700">Nom
                                                     de rue</label>
-                                                <input type="text" name="street_name" id="street_name" required value="{{$elector->street_name}}"
-                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
+                                                <input type="text" name="street_name" id="street_name" required
+                                                       value="{{$elector->street_name}}"
+                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10">
                                             </div>
 
                                             <div class="col-span-4">
@@ -119,8 +124,9 @@
                                                        class="block text-sm font-medium text-gray-700">Adresse
                                                     additionnelle 1</label>
                                                 <input type="text" name="additional_address_1"
-                                                       id="additional_address_1" value="{{$elector->additional_address_1}}"
-                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
+                                                       id="additional_address_1"
+                                                       value="{{$elector->additional_address_1}}"
+                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10">
                                             </div>
 
                                             <div class="col-span-5">
@@ -128,8 +134,9 @@
                                                        class="block text-sm font-medium text-gray-700">Adresse
                                                     additionnelle 2</label>
                                                 <input type="text" name="additional_address_2"
-                                                       id="additional_address_2" value="{{$elector->additional_address_2}}"
-                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
+                                                       id="additional_address_2"
+                                                       value="{{$elector->additional_address_2}}"
+                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10">
                                             </div>
 
                                             <div class="col-span-2">
@@ -138,16 +145,17 @@
                                                     dit</label>
                                                 <input type="text" name="place" id="place"
                                                        autocomplete="place" value="{{$elector->place}}"
-                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
+                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10">
                                             </div>
 
                                             <div class="col-span-3">
                                                 <label for="city"
                                                        class="required block text-sm font-medium text-gray-700">Ville</label>
                                                 <select id="city" name="city" autocomplete="city" required
-                                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                                                     @foreach($cities as $city)
-                                                        <option value="{{$city->city}}" @if($elector->city == $city->city) selected @endif>{{$city->city}}</option>
+                                                        <option value="{{$city->city}}"
+                                                                @if($elector->city == $city->city) selected @endif>{{$city->city}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -158,7 +166,7 @@
                                                     postal</label>
                                                 <input type="text" name="postal_code" id="postal_code"
                                                        autocomplete="postal_code" value="{{$elector->postal_code}}"
-                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
+                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10">
                                             </div>
 
                                             <div class="col-span-2">
@@ -166,8 +174,9 @@
                                                        class="required block text-sm font-medium text-gray-700">Numéro
                                                     département</label>
                                                 <input type="number" name="department" id="department"
-                                                       autocomplete="department" required value="{{$elector->department}}"
-                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10 sm:text-sm">
+                                                       autocomplete="department" required
+                                                       value="{{$elector->department}}"
+                                                       class="mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 rounded-md focus:border-blue-500 focus:z-10">
                                             </div>
 
                                             <div class="col-span-6">
@@ -176,9 +185,10 @@
                                                     du bureau de vote</label>
                                                 <select id="voting_office_district" name="voting_office_district"
                                                         autocomplete="voting_office_district" required
-                                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                                                     @foreach($districts as $district)
-                                                        <option value="{{$district->voting_office_district}}" @if($elector->voting_office_district == $district->voting_office_district) selected @endif>{{$district->voting_office_district}}</option>
+                                                        <option value="{{$district->voting_office_district}}"
+                                                                @if($elector->voting_office_district == $district->voting_office_district) selected @endif>{{$district->voting_office_district}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -189,12 +199,43 @@
                                                     du bureau de vote</label>
                                                 <select id="voting_office_code" name="voting_office_code"
                                                         autocomplete="voting_office_code" required
-                                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                                                     @foreach($codes as $code)
-                                                        <option value="{{$code->voting_office_code}}" @if($elector->voting_office_code == $code->voting_office_code) selected @endif>{{$code->voting_office_code}}</option>
+                                                        <option value="{{$code->voting_office_code}}"
+                                                                @if($elector->voting_office_code == $code->voting_office_code) selected @endif>{{$code->voting_office_code}}</option>
                                                     @endforeach
                                                 </select></div>
+                                            <div class="col-span-9">
+                                                <label for="note"
+                                                       class="form-label inline-block mb-2 text-gray-700"
+                                                >Notes</label
+                                                >
+                                                <textarea
+                                                    class="
+        form-control
+        block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
+      "
+                                                    id="note"
+                                                    name="note"
+                                                    rows="3"
+                                                    placeholder="Notes sur l'électeur"
+                                                >{{$elector->note}}</textarea>
+                                            </div>
                                         </div>
+
                                     </div>
                                 </div>
 
@@ -216,7 +257,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
 
 

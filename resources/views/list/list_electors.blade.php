@@ -14,6 +14,14 @@
         {{ \Diglactic\Breadcrumbs\Breadcrumbs::render() }}
     </header>
     <main>
+        <div class="flex flex-wrap flex-row justify-center mt-4">
+            <button onclick="window.location.href = '{{route("export_electors", ["city" => $city, "code" => $code])}}';" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                Exporter
+            </button>
+        </div>
         <div class="container mx-auto">
             <div class="flex flex-col">
                 <div class="w-full">
@@ -85,13 +93,7 @@
                                         {{ $elector->voting_office_code }}
                                     </td>
                                     <td class="px-6 py-4 text-sm text-center text-gray-500 flex flex-wrap flex-row justify-center">
-                                        <button onclick="window.location.href = '{{route("edit_elector", ["id" => $elector->id])}}';" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
-                                            </svg>
-                                        </button>
-                                        <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full m-2">
+                                        <button onclick="window.location.href = '{{route("edit_elector", ["id" => $elector->id])}}';" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full m-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                             </svg>

@@ -43,7 +43,7 @@ class ElectorController extends Controller
             $elector = json_decode($response->getBody()->getContents());
             $officesCode = json_decode($officeCodesRequest->getBody()->getContents());
             $officesDictricts = json_decode($officesDictrictsRequest->getBody()->getContents());
-            return View('page.elector.edit', ["elector" => $elector->elector[0], "cities" => $cities->cities, "codes" => $officesCode->codes, "districts" => $officesDictricts->districts]);
+            return View('elector.edit', ["elector" => $elector->elector[0], "cities" => $cities->cities, "codes" => $officesCode->codes, "districts" => $officesDictricts->districts]);
         }
     }
 
@@ -73,7 +73,8 @@ class ElectorController extends Controller
                 'voting_office_district' => $request->voting_office_district,
                 'voting_office_code' => $request->voting_office_code,
                 'country' => $request->country,
-                'nationality_identifier' => $request->nationality_identifier
+                'nationality_identifier' => $request->nationality_identifier,
+                'note' => $request->note
             ]
         ]);
         if($update->getStatusCode() == 200) {
