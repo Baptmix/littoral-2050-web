@@ -32,7 +32,7 @@ class ListController extends Controller
      */
     public function findOfficeFromCity(Request $request) {
         $client = new Client();
-        $response = $client->request('GET', env("APP_API_URL") . "/electors/offices/" . $request->city, [
+        $response = $client->request('GET', env("APP_API_URL") . "/electors/offices/find/" . $request->city, [
             'headers' => [
                 'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
