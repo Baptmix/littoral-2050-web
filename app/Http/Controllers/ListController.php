@@ -32,11 +32,14 @@ class ListController extends Controller
      */
     public function findOfficeFromCity(Request $request) {
         $client = new Client();
-        $response = $client->request('GET', env("APP_API_URL") . "/electors/offices/" . $request->city, [
+        $response = $client->request('POST', env("APP_API_URL") . "/electors/offices/", [
             'headers' => [
                 'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
-            ]
+            ],
+            'form_params' => [
+            "city" => $request->city,
+        ]
         ]);
         if($response->getStatusCode() == 200) {
             $codes = json_decode($response->getBody()->getContents());
