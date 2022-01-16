@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Littoral 2050 - Administration</title>
+    <link rel="icon" type="image/png" href="{{ asset('img/vm.png') }}" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
@@ -19,8 +20,10 @@
     <script type="text/javascript" charset="utf8"
             src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
 </head>
-@yield('header')
 <body>
+<header>
+    @yield('header')
+</header>
 <style>
     .flash {
         position: absolute;

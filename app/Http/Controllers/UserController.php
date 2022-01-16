@@ -15,7 +15,7 @@ class UserController extends Controller
         $client = new Client();
         $response = $client->request('GET', env("APP_API_URL") . "/users/all", [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
         ]);
@@ -29,7 +29,7 @@ class UserController extends Controller
         $client = new Client();
         $response = $client->request('GET', env("APP_API_URL") . "/user/" . $id, [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
         ]);
@@ -43,7 +43,7 @@ class UserController extends Controller
         $client = new Client();
         $response = $client->request('GET', env("APP_API_URL") . "/user/delete/" . $id, [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
         ]);
@@ -58,7 +58,7 @@ class UserController extends Controller
         $client = new Client();
         $update = $client->request('POST', env("APP_API_URL") . "/user/add", [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
             'json' => [
@@ -82,7 +82,7 @@ class UserController extends Controller
         $client = new Client();
         $update = $client->request('POST', env("APP_API_URL") . "/user/update", [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
             'json' => [

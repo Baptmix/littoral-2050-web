@@ -11,21 +11,21 @@ class ElectorController extends Controller
         $client = new Client();
         $response = $client->request('GET', env("APP_API_URL") . "/elector/" . $id, [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
         ]);
 
         $citiesRequest = $client->request('GET', env("APP_API_URL") . "/electors/cities/all", [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
         ]);
 
         $officesDictrictsRequest = $client->request('GET', env("APP_API_URL") . "/electors/offices/districts/all", [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
         ]);
@@ -33,7 +33,7 @@ class ElectorController extends Controller
 
         $officeCodesRequest = $client->request('GET', env("APP_API_URL") . "/electors/offices/codes/all", [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
         ]);
@@ -51,7 +51,7 @@ class ElectorController extends Controller
         $client = new Client();
         $update = $client->request('POST', env("APP_API_URL") . "/elector/update", [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
             'json' => [

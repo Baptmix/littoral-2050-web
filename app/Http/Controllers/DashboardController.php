@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
@@ -12,13 +11,13 @@ class DashboardController extends Controller
         $client = new Client();
         $countElectorsResponse = $client->request('GET', env("APP_API_URL") . "/electors/count/", [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
         ]);
         $countUsersResponse = $client->request('GET', env("APP_API_URL") . "/users/count/", [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
         ]);

@@ -17,7 +17,7 @@ class ListController extends Controller
         $client = new Client();
         $response = $client->request('GET', env("APP_API_URL") . "/electors/cities/all", [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
         ]);
@@ -34,7 +34,7 @@ class ListController extends Controller
         $client = new Client();
         $response = $client->request('GET', env("APP_API_URL") . "/electors/offices/" . $request->city, [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ]
         ]);
@@ -51,7 +51,7 @@ class ListController extends Controller
         $client = new Client();
         $response = $client->request('POST', env("APP_API_URL") . "/electors/", [
             'headers' => [
-                'Authorization' => 'Bearer '. env("APP_API_TOKEN"),
+                'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
             ],
             'form_params' => [

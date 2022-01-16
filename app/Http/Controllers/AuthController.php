@@ -15,24 +15,30 @@ class AuthController extends Controller
         return View('auth.login');
     }
 
-    public function login(Request $request, Guard $guard) {
-        $client = new Client();
-        $response = $client->request('POST',env('APP_API_URL') . "/auth/login/", [
-            'json' => [
-                'email' => $request->input('email'),
-                'password' => $request->input('password'),
-            ],
-            'headers' => [
-                'Content-Type' => 'application/json',
-            ]
+    public function login(Request $request)
+    {
+        $attr = $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string|min:6'
         ]);
-        if($response->getStatusCode() == 200) {
-            $guard->validate();
-            $user = $guard->user();
 
-            dd($user);
-            dd(($response)->getBody()->getContents());
+        if (!Auth::attempt($attr)) {
+            return redirect()->back()->withFail('Nom d\'utilisateur ou mot de passe incorrect.');
         }
+
+        session()->put('token', auth()->user()->createToken('API Token')->plainTextToken);
+
+        return redirect()->route('dashboard')->withSuccess('Authentification réussie !');
+
+
+    }
+
+    // this method signs out users by removing tokens
+    public function logout()
+    {
+        auth()->user()->tokens()->delete();
+        session()->remove('token');
+        return redirect()->route('login')->withSuccess('Déconnexion effectuée.');
     }
 
     public function forgottenPassword(Request $request) {
