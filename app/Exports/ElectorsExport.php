@@ -20,7 +20,7 @@ class ElectorsExport implements FromView
     {
 
         $client = new Client();
-        $response = $client->request('POST', env("APP_API_URL") . "/electors/", [
+        $response = $client->request('POST', env("APP_API_URL") . "/elector/export", [
             'headers' => [
                 'Authorization' => 'Bearer ' . session()->get("token"),
                 'Accept' => 'application/json',
