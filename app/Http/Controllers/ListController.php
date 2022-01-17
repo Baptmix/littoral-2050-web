@@ -49,7 +49,7 @@ class ListController extends Controller
      */
     public function listElectors(Request $request) {
         $client = new Client();
-        $response = $client->request('POST', env("APP_API_URL") . "/electors/", [
+        $response = $client->request('POST', env("APP_API_URL") . "/elector/all", [
             'headers' => [
                 'Authorization' => 'Bearer '. session()->get("token"),
                 'Accept' => 'application/json',
