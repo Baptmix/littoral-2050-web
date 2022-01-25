@@ -5,7 +5,7 @@
 @section('content')
     <style>
         section.content.auth::after {
-            background: url(http://127.0.0.1:8000/svg/footer_auth.svg);
+            background: url({{ asset("/svg/footer_auth.svg") }});
             width: 100%;
             height: 40%;
             position: absolute;
