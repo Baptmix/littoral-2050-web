@@ -44,4 +44,63 @@ class AuthController extends Controller
     public function forgottenPassword(Request $request) {
         return View('auth.forgotten_password');
     }
+
+    public function forgottenPasswordPost(Request $request) {$client = new Client();
+        $response = $client->request('POST', env("APP_API_URL") . "/auth/send-password-reset-link", [
+            'headers' => [
+                'Accept' => 'application/json',
+            ],
+            'form_params' => [
+                "email" => $request->email,
+            ]
+        ]);
+        if($response->getStatusCode() == 200) {
+            $respData = json_decode($response->getBody()->getContents(), true);
+            $data = array_values($respData);
+            if($data[0] == false) {
+                return redirect()->back()->withFail('Adresse e-mail incorrecte.');
+
+            } else if ($data[0] == true) {
+                return redirect()->route('login')->withSuccess('Un mail de réinitialisation vient de vous être envoyé !');
+            }
+        } else {
+            dd($response->getBody()->getContents());
+        }
+    }
+
+    public function setNewPassword(Request $request) {
+        return View('auth.new_password', ["token" => $request->token]);
+    }
+
+    public function setNewPasswordPost(Request $request) {
+        if($request->password == $request->password_confirmation) {
+            $client = new Client();
+            $response = $client->request('POST', env("APP_API_URL") . "/auth/reset-password", [
+                'headers' => [
+                    'Accept' => 'application/json',
+                ],
+                'form_params' => [
+                    "email" => $request->email,
+                    "password" => $request->password,
+                    "resetToken" => $request->resetToken,
+                ]
+            ]);
+            if($response->getStatusCode() == 200) {
+                $respData = json_decode($response->getBody()->getContents(), true);
+                $data = array_values($respData);
+                if($data[0] == false) {
+                    return redirect()->back()->withFail('Token ou adresse e-mail incorrect.');
+
+                } else if ($data[0] == true) {
+                    return redirect()->route('login')->withSuccess('Votre mot de passe a été changé !');
+                }
+            } else {
+                dd($response->getBody()->getContents());
+            }
+        } else {
+
+            return redirect()->back()->withFail('Les deux mots de passe ne correspondent pas.');
+        }
+
+    }
 }
