@@ -21,6 +21,9 @@ Route::get('/login', [\App\Http\Controllers\AuthController::class, 'index'])->na
 Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login'])->name('login_post');
 Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
+Route::get('/forgotten_password', [\App\Http\Controllers\AuthController::class, 'forgottenPassword'])->name('forgotten_password');
+Route::post('/forgotten_password', [\App\Http\Controllers\AuthController::class, 'login'])->name('forgotten_password_post');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
@@ -31,8 +34,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::post('/user/add', [\App\Http\Controllers\UserController::class, 'add_post'])->name('add_user_post');
     Route::get('/user/add', [\App\Http\Controllers\UserController::class, 'add'])->name('add_user');
 
-    Route::get('/forgotten_password', [\App\Http\Controllers\AuthController::class, 'forgottenPassword'])->name('forgotten_password');
-    Route::post('/forgotten_password', [\App\Http\Controllers\AuthController::class, 'login'])->name('forgotten_password_post');
 
     Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
     Route::get('/list', [\App\Http\Controllers\ListController::class, 'index'])->name('list');
