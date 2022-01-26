@@ -36,6 +36,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::post('/user/add', [\App\Http\Controllers\UserController::class, 'add_post'])->name('add_user_post');
     Route::get('/user/add', [\App\Http\Controllers\UserController::class, 'add'])->name('add_user');
 
+    Route::get('/admin/maintenance', [\App\Http\Controllers\MaintenanceController::class, 'index'])->name('maintenance');
+    Route::post('/admin/maintenance/update', [\App\Http\Controllers\MaintenanceController::class, 'update'])->name('update_maintenance');
+
 
     Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
     Route::get('/list', [\App\Http\Controllers\ListController::class, 'index'])->name('list');
