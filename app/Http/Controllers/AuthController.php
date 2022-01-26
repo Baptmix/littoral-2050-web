@@ -45,7 +45,8 @@ class AuthController extends Controller
         return View('auth.forgotten_password');
     }
 
-    public function forgottenPasswordPost(Request $request) {$client = new Client();
+    public function forgottenPasswordPost(Request $request) {
+        $client = new Client();
         $response = $client->request('POST', env("APP_API_URL") . "/auth/send-password-reset-link", [
             'headers' => [
                 'Accept' => 'application/json',
