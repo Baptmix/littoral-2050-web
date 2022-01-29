@@ -47,6 +47,7 @@
                             <label for="password" class="sr-only">Mot de passe</label>
                             <input id="password" name="password" type="password" autocomplete="current-password"
                                    required
+                                   minlength="6"
                                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                                    placeholder="Mot de passe">
                         </div>

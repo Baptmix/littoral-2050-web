@@ -48,6 +48,7 @@
                             <label for="password" class="sr-only">Nouveau mot de passe</label>
                             <input id="password" name="password" type="password" autocomplete="password"
                                    required
+                                   minlength="6"
                                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                                    placeholder="Nouveau mot de passe">
                         </div>
@@ -55,6 +56,7 @@
                             <label for="password" class="sr-only">Confirmation du nouveau mot de passe</label>
                             <input id="password_confirmation" name="password_confirmation" type="password" autocomplete="password"
                                    required
+                                   minlength="6"
                                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                                    placeholder="Confirmation du nouveau mot de passe">
                         </div>
