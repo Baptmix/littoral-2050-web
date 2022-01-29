@@ -43,7 +43,7 @@ class ElectorController extends Controller
             $elector = json_decode($response->getBody()->getContents());
             $officesCode = json_decode($officeCodesRequest->getBody()->getContents());
             $officesDictricts = json_decode($officesDictrictsRequest->getBody()->getContents());
-            return View('elector.edit', ["elector" => $elector->elector[0], "cities" => $cities->cities, "codes" => $officesCode->codes, "districts" => $officesDictricts->districts]);
+            return View('elector.edit', ["elector" => $elector->elector, "cities" => $cities->cities, "codes" => $officesCode->codes, "districts" => $officesDictricts->districts]);
         }
     }
 

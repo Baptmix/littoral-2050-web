@@ -58,7 +58,7 @@
                     clip-rule="evenodd"/>
             </svg>
           </span>
-                            Connexion
+                            Envoyer
                         </button>
                     </div>
                 </form>
