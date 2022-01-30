@@ -55,7 +55,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h2 class="font-bold uppercase text-gray-600">Données sur les élécteurs</h2>
-                                <p class="font-bold text-3xl">0 <span class="text-blue-500"><i
+                                <p class="font-bold text-3xl">{{ $count_completed_electors }}<span class="text-blue-500"><i
                                             class="fas fa-exchange-alt"></i></span></p>
                             </div>
                         </div>
