@@ -21,10 +21,17 @@ class DashboardController extends Controller
                 'Accept' => 'application/json',
             ],
         ]);
-        if($countElectorsResponse->getStatusCode() == 200 && $countUsersResponse->getStatusCode() == 200) {
+        $countCompletedElectorsResponse = $client->request('GET', env("APP_API_URL") . "/electors/count/completed", [
+            'headers' => [
+                'Authorization' => 'Bearer '. session()->get("token"),
+                'Accept' => 'application/json',
+            ],
+        ]);
+        if($countElectorsResponse->getStatusCode() == 200 && $countUsersResponse->getStatusCode() == 200 && $countCompletedElectorsResponse->getStatusCode() == 200) {
             $countElectors = json_decode($countElectorsResponse->getBody()->getContents());
             $countUsers = json_decode($countUsersResponse->getBody()->getContents());
-            return View('dashboard', ["count_electors" => $countElectors->electors, "count_users" => $countUsers->users]);
+            $countCompletedElectors = json_decode($countCompletedElectorsResponse->getBody()->getContents());
+            return View('dashboard', ["count_electors" => $countElectors->electors, "count_users" => $countUsers->users, "count_completed_electors" => $countCompletedElectors->electors]);
         }
     }
 }
