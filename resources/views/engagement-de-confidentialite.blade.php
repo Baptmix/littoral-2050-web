@@ -11,9 +11,9 @@
             -webkit-text-fill-color: transparent;
         }
     </style>
-    <section class="content">
+    <section class="content mx-auto w-auto" style="max-width: 1200px">
         <div class="min-h-full flex items-center justify-center">
-            <div class="w-full space-y-8">
+            <div class="space-y-8">
                 <div>
                     <img class="mx-auto h-20 w-auto" src="{{ asset('svg/logo.svg') }}"
                          alt="Workflow">
