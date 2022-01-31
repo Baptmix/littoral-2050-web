@@ -36,7 +36,6 @@
                 </div>
                 <form class="mt-8 space-y-6" action="{{route("support_post")}}" method="POST">
                     <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-                    {{--                    <input type="hidden" name="remember" value="true">--}}
                     <div class="rounded-md shadow-sm -space-y-px">
                         <div>
                             <label for="email-address" class="sr-only">Votre adresse e-mail</label>
