@@ -21,6 +21,11 @@ Route::get('/login', [\App\Http\Controllers\AuthController::class, 'index'])->na
 Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login'])->name('login_post');
 Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
+Route::get('/support', [\App\Http\Controllers\SupportController::class, 'index'])->name('support');
+Route::post('/support', [\App\Http\Controllers\SupportController::class, 'support'])->name('support_post');
+
+Route::get('/engagement-de-confidentialite', [\App\Http\Controllers\SupportController::class, 'engagement_de_confidentialite'])->name('engagement_confidentialite');
+
 Route::get('/reset_password', [\App\Http\Controllers\AuthController::class, 'setNewPassword'])->name('reset_password');
 Route::post('/new_password', [\App\Http\Controllers\AuthController::class, 'setNewPasswordPost'])->name('reset_password_post');
 Route::get('/forgotten_password', [\App\Http\Controllers\AuthController::class, 'forgottenPassword'])->name('forgotten_password');
