@@ -21,6 +21,8 @@ Route::get('/login', [\App\Http\Controllers\AuthController::class, 'index'])->na
 Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login'])->name('login_post');
 Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
+Route::get('/download/ios', [\App\Http\Controllers\DownloadController::class, 'ios'])->name('ios_download');
+
 Route::get('/support', [\App\Http\Controllers\SupportController::class, 'index'])->name('support');
 Route::post('/support', [\App\Http\Controllers\SupportController::class, 'support'])->name('support_post');
 
