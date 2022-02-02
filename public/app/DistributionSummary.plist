@@ -9,10 +9,8 @@
 			<array>
 				<string>arm64</string>
 			</array>
-			<key>bitcode</key>
-			<true/>
 			<key>buildNumber</key>
-			<string>5</string>
+			<string>4</string>
 			<key>certificate</key>
 			<dict>
 				<key>SHA1</key>
@@ -29,10 +27,8 @@
 					<array>
 						<string>arm64</string>
 					</array>
-					<key>bitcode</key>
-					<true/>
 					<key>buildNumber</key>
-					<string>5</string>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
@@ -44,8 +40,6 @@
 					</dict>
 					<key>name</key>
 					<string>Capacitor.framework</string>
-					<key>symbols</key>
-					<true/>
 					<key>team</key>
 					<dict>
 						<key>id</key>
@@ -54,17 +48,15 @@
 						<string>Matteo Martinez</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>1.4</string>
+					<string>3.3.4</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
 					<array>
 						<string>arm64</string>
 					</array>
-					<key>bitcode</key>
-					<true/>
 					<key>buildNumber</key>
-					<string>5</string>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
@@ -76,8 +68,6 @@
 					</dict>
 					<key>name</key>
 					<string>CapacitorApp.framework</string>
-					<key>symbols</key>
-					<true/>
 					<key>team</key>
 					<dict>
 						<key>id</key>
@@ -86,17 +76,15 @@
 						<string>Matteo Martinez</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>1.4</string>
+					<string>1.0.2</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
 					<array>
 						<string>arm64</string>
 					</array>
-					<key>bitcode</key>
-					<true/>
 					<key>buildNumber</key>
-					<string>5</string>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
@@ -108,8 +96,6 @@
 					</dict>
 					<key>name</key>
 					<string>CapacitorCommunityHttp.framework</string>
-					<key>symbols</key>
-					<true/>
 					<key>team</key>
 					<dict>
 						<key>id</key>
@@ -118,17 +104,15 @@
 						<string>Matteo Martinez</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>1.4</string>
+					<string>1.4.1</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
 					<array>
 						<string>arm64</string>
 					</array>
-					<key>bitcode</key>
-					<true/>
 					<key>buildNumber</key>
-					<string>5</string>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
@@ -140,8 +124,6 @@
 					</dict>
 					<key>name</key>
 					<string>CapacitorHaptics.framework</string>
-					<key>symbols</key>
-					<true/>
 					<key>team</key>
 					<dict>
 						<key>id</key>
@@ -150,17 +132,15 @@
 						<string>Matteo Martinez</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>1.4</string>
+					<string>1.0.2</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
 					<array>
 						<string>arm64</string>
 					</array>
-					<key>bitcode</key>
-					<true/>
 					<key>buildNumber</key>
-					<string>5</string>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
@@ -172,8 +152,6 @@
 					</dict>
 					<key>name</key>
 					<string>CapacitorKeyboard.framework</string>
-					<key>symbols</key>
-					<true/>
 					<key>team</key>
 					<dict>
 						<key>id</key>
@@ -182,17 +160,15 @@
 						<string>Matteo Martinez</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>1.4</string>
+					<string>1.0.2</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
 					<array>
 						<string>arm64</string>
 					</array>
-					<key>bitcode</key>
-					<true/>
 					<key>buildNumber</key>
-					<string>5</string>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
@@ -204,8 +180,6 @@
 					</dict>
 					<key>name</key>
 					<string>CapacitorSplashScreen.framework</string>
-					<key>symbols</key>
-					<true/>
 					<key>team</key>
 					<dict>
 						<key>id</key>
@@ -214,17 +188,15 @@
 						<string>Matteo Martinez</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>1.4</string>
+					<string>1.2.0</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
 					<array>
 						<string>arm64</string>
 					</array>
-					<key>bitcode</key>
-					<true/>
 					<key>buildNumber</key>
-					<string>5</string>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
@@ -236,8 +208,6 @@
 					</dict>
 					<key>name</key>
 					<string>CapacitorStatusBar.framework</string>
-					<key>symbols</key>
-					<true/>
 					<key>team</key>
 					<dict>
 						<key>id</key>
@@ -246,17 +216,15 @@
 						<string>Matteo Martinez</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>1.4</string>
+					<string>1.0.2</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
 					<array>
 						<string>arm64</string>
 					</array>
-					<key>bitcode</key>
-					<true/>
 					<key>buildNumber</key>
-					<string>5</string>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
@@ -268,8 +236,6 @@
 					</dict>
 					<key>name</key>
 					<string>Cordova.framework</string>
-					<key>symbols</key>
-					<true/>
 					<key>team</key>
 					<dict>
 						<key>id</key>
@@ -278,17 +244,15 @@
 						<string>Matteo Martinez</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>1.4</string>
+					<string>3.3.4</string>
 				</dict>
 				<dict>
 					<key>architectures</key>
 					<array>
 						<string>arm64</string>
 					</array>
-					<key>bitcode</key>
-					<true/>
 					<key>buildNumber</key>
-					<string>5</string>
+					<string>1</string>
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
@@ -300,8 +264,6 @@
 					</dict>
 					<key>name</key>
 					<string>CordovaPlugins.framework</string>
-					<key>symbols</key>
-					<true/>
 					<key>team</key>
 					<dict>
 						<key>id</key>
@@ -310,15 +272,13 @@
 						<string>Matteo Martinez</string>
 					</dict>
 					<key>versionNumber</key>
-					<string>1.4</string>
+					<string>3.3.4</string>
 				</dict>
 			</array>
 			<key>entitlements</key>
 			<dict>
 				<key>application-identifier</key>
 				<string>7GQ75R8ZRX.io.ionic.littoral</string>
-				<key>beta-reports-active</key>
-				<true/>
 				<key>com.apple.developer.team-identifier</key>
 				<string>7GQ75R8ZRX</string>
 				<key>get-task-allow</key>
@@ -333,14 +293,12 @@
 			<key>profile</key>
 			<dict>
 				<key>UUID</key>
-				<string>32af303f-e46e-407c-89fa-74b82952cebd</string>
+				<string>d895e73c-7799-48a7-a333-813b9e4310fb</string>
 				<key>dateExpires</key>
 				<string>28/01/2023</string>
 				<key>name</key>
-				<string>iOS Team Store Provisioning Profile: io.ionic.littoral</string>
+				<string>iOS Team Ad Hoc Provisioning Profile: io.ionic.littoral</string>
 			</dict>
-			<key>symbols</key>
-			<true/>
 			<key>team</key>
 			<dict>
 				<key>id</key>
