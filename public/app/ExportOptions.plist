@@ -9,7 +9,7 @@
 	<key>manifest</key>
 	<dict>
 		<key>appURL</key>
-		<string>https://littoral-app.fr/app/littoral.ipa</string>
+		<string>https://littoral-app.fr/app/App.ipa</string>
 		<key>displayImageURL</key>
 		<string>https://littoral-app.fr/app/image.57x57.png</string>
 		<key>fullSizeImageURL</key>
